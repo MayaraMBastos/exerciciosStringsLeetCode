@@ -8,11 +8,13 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        String s = sc.next();
+        String t = sc.next();
+        anagrama(s,t);
 
-        // VERIFICA SE AS STRINGS SÃO ANAGRAMAS
-        String s = "anagram";
-        String t = "gramana";
+    }
 
+    public static boolean anagrama(String s , String t) {
         // Convertendo as Strings em listas ordenadas
         List<Character> sortedListS = s.chars()
                 .mapToObj(c -> (char) c)
@@ -25,12 +27,9 @@ public class Main {
                 .collect(Collectors.toList());
         // Se a ListS for igual a ListT então elas contem os mesmos caracteres e sao um anagrama
         if (sortedListS.equals(sortedListT)) {
-            System.out.println("true");
+            return true;
         }
-        System.out.println(sortedListS);
-        System.out.println(sortedListT);
-
-
+        return false;
     }
 
 }
