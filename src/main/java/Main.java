@@ -8,10 +8,12 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String s = sc.next();
+       // String s = sc.next();
         String t = sc.next();
-       // anagrama(s, t);
-findTheDifference(s,t);
+        // anagrama(s, t);
+        //findTheDifference(s, t);
+        char s[]={'h','e','l','l','o'};
+        reverseString(s);
     }
 
     //metodo para descobrir se uma string é um anagrama de outra
@@ -55,5 +57,16 @@ findTheDifference(s,t);
         }
 
         return 'A';
+    }
+
+    //metodo para imprimir a string ao contrario
+    public static void reverseString(char[] s) {
+
+        char t[] = new char[s.length];
+
+        for (int i = 0; i < s.length; i++) {
+            t[i] = s[(s.length - 1) - i]; // Copia os elementos em ordem inversa
+        }
+        System.out.println(Arrays.toString(t));
     }
 }
