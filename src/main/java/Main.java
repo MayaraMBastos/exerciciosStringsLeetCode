@@ -18,9 +18,10 @@ public class Main {
 //        String paragraph = "Bob hit a ball, the hit BALL flew far after it was hit.";
 //        String[] banned = {"hit"};
 //        mostCommonWord(paragraph, banned);
-        String s = "AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT";
-        findRepeatedDnaSequences(s);
-
+//        String s = "AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT";
+//        findRepeatedDnaSequences(s);
+        String s = "bcabc";
+        removeDuplicateLetters(s);
     }
 
     //metodo para descobrir se uma string é um anagrama de outra
@@ -42,6 +43,9 @@ public class Main {
 //        }
 //        return false;
 //    }
+
+
+
 
     //metodo para achar qual caractere foi adicionado a uma string
     public static char findTheDifference(String s, String t) {
@@ -113,5 +117,18 @@ public class Main {
         System.out.println(repeatidas);
         return new ArrayList(repeatidas);
 
+    }
+
+    //metodos paa remover letras duplicadas
+    public static String removeDuplicateLetters(String s) {
+        Set<Character> setString = s.chars()
+                .mapToObj(c -> (char) c)
+                .collect(Collectors.toCollection(LinkedHashSet::new));
+
+        String resultado = setString.stream()
+                .map(String::valueOf) // Converte cada Character para String
+                .collect(Collectors.joining());
+        System.out.println(resultado);
+        return resultado;
     }
 }
